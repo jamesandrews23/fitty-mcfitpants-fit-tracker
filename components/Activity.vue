@@ -3,17 +3,25 @@
     class="mt-3 mb-3"
     max-width="344"
   >
-    <v-card-text>
-      <div>Word of the Day</div>
-      <p class="text-h4 text--primary">
-        el·ee·mos·y·nar·y
-      </p>
-      <p>adjective</p>
-      <div class="text--primary">
-        relating to or dependent on charity; charitable.<br>
-        "an eleemosynary educational institution."
-      </div>
-    </v-card-text>
+		<v-list-item three-line>
+			<v-list-item-content>
+<!--				<div class="text-overline mb-4">-->
+<!--					Bike Ride-->
+<!--				</div>-->
+				<v-list-item-title class="text-h5 mb-1">
+					{{type}}
+				</v-list-item-title>
+				<v-list-item-subtitle>{{desc}}</v-list-item-subtitle>
+			</v-list-item-content>
+
+			<v-list-item-avatar
+				size="80"
+			>
+				<v-icon large>
+					{{icon}}
+				</v-icon>
+			</v-list-item-avatar>
+		</v-list-item>
     <v-card-actions>
       <v-btn
         text
@@ -51,9 +59,11 @@
 </template>
 <script>
 export default {
-  data: () => ({
-    reveal: false
-  })
+    props: {
+        type: String,
+				desc: String,
+				icon: String
+		}
 }
 </script>
 <style>

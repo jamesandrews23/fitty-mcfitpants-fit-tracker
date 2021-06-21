@@ -1,8 +1,13 @@
 <template>
   <v-row justify="center" align="center">
     <v-col>
-
-			<Activity v-for="activity in activities" />
+			<Activity
+				v-for="activity in activities"
+				:key="activity.type"
+				:type="activity.type"
+				:desc="activity.desc"
+				:icon="activity.icon"
+			/>
 		</v-col>
     <v-col cols="6">col 2</v-col>
     <v-col>
@@ -32,13 +37,15 @@ export default {
     return {
       activities: [
           {
-              type: '',
-              desc: ''
+              type: 'Bike Ride',
+              desc: 'A bike ride through the woods',
+							icon: 'mdi-bike'
           },
-          {
-              type: '',
-              desc: ''
-          }
+					{
+					    type: 'Blood Sugar',
+							desc: 'blood sugar check',
+							icon: 'mdi-domain'
+					}
       ]
     }
   }

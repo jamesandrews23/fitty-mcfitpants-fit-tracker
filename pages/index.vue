@@ -7,6 +7,7 @@
 				:type="activity.type"
 				:desc="activity.desc"
 				:icon="activity.icon"
+				:content="activity.content"
 			/>
 		</v-col>
     <v-col cols="6">col 2</v-col>
@@ -24,14 +25,14 @@
     </v-col>
   </v-row>
 </template>
-
 <script>
-
-import Activity from '../components/Activity'
+import Activity from '../components/Activity';
+import BloodSugarActivity from "../components/BloodSugarActivity";
 
 export default {
   components: {
-      Activity
+      Activity,
+			BloodSugarActivity
   },
   data: function(){
     return {
@@ -44,7 +45,8 @@ export default {
 					{
 					    type: 'Blood Sugar',
 							desc: 'blood sugar check',
-							icon: 'mdi-domain'
+							icon: 'mdi-water',
+							content: 'BloodSugarActivity'
 					}
       ]
     }

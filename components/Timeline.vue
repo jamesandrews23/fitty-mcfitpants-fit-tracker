@@ -23,7 +23,7 @@
 			</v-timeline-item>
 		</v-timeline>
 		<p v-else class="text-center">
-			Start by adding an activity
+			Start by Adding an Activity
 		</p>
 	</div>
 </template>
@@ -31,7 +31,8 @@
     export default {
         computed: {
         	items (){
-        	    return this.$store.state.timeline.timeline;
+        	    let activities = this.$store.state.timeline.timeline.slice();
+        	    return activities.reverse();
 					}
 				}
     }

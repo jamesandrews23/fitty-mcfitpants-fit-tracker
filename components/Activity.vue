@@ -10,7 +10,6 @@
 				<v-list-item-subtitle>{{desc}}</v-list-item-subtitle>
 				<component :is="content"></component>
 			</v-list-item-content>
-
 			<v-list-item-avatar
 				size="80"
 			>

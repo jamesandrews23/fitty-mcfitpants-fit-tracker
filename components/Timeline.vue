@@ -11,7 +11,7 @@
 				:icon="item.icon"
 				fill-dot
 			>
-				<span slot="opposite">Test</span>
+				<span slot="opposite">{{ item.timestamp }}</span>
 				<v-card elevation="2">
 					<v-card-title class="text-h6">
 						{{ item.type }}

@@ -46,7 +46,8 @@ export default {
 										desc: this.$props.desc,
 										icon: this.$props.icon,
 										color: this.$props.color,
-										content: this.$props.content
+										content: this.$props.content,
+										timestamp: new Date().toLocaleString()
 								}
 						);
 				}

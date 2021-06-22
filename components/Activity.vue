@@ -36,7 +36,8 @@ export default {
 				desc: String,
 				icon: String,
 				content: String,
-				color: String
+				color: String,
+				suffix: String
 		},
 		methods: {
         addActivity (e){
@@ -47,7 +48,8 @@ export default {
 										icon: this.$props.icon,
 										color: this.$props.color,
 										content: this.$refs.dynamicComponent.$data.val,
-										timestamp: new Date().toLocaleString()
+										timestamp: new Date().toLocaleString(),
+										suffix: this.$props.suffix
 								}
 						);
 				}

@@ -9,6 +9,7 @@
 				:icon="activity.icon"
 				:content="activity.content"
 				:color="activity.color"
+				:suffix="activity.suffix"
 			/>
 		</v-col>
     <v-col cols="7">
@@ -43,17 +44,19 @@ export default {
       activities: [
           {
               type: 'Bike Ride',
-              desc: 'A bike ride through the woods',
+              desc: 'miles',
 							icon: 'mdi-bike',
 							content: 'BikeRideActivity',
-							color: 'green'
+							color: 'green',
+							suffix: ' miles'
           },
 					{
 					    type: 'Blood Sugar',
 							desc: '',
 							icon: 'mdi-water',
 							content: 'BloodSugarActivity',
-							color: 'red'
+							color: 'red',
+							suffix: ' mg/dL'
 					}
       ]
     }

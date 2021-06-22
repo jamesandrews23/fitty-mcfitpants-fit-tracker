@@ -1,5 +1,5 @@
 <template>
-  <v-row justify="center" align="center">
+  <v-row justify="center">
     <v-col>
 			<Activity
 				v-for="activity in activities"
@@ -11,7 +11,9 @@
 				:color="activity.color"
 			/>
 		</v-col>
-    <v-col cols="6">col 2</v-col>
+    <v-col cols="6">
+			<Timeline />
+		</v-col>
     <v-col>
       <v-row>
         <v-col>

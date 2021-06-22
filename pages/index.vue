@@ -11,7 +11,7 @@
 				:color="activity.color"
 			/>
 		</v-col>
-    <v-col cols="6">
+    <v-col cols="7">
 			<Timeline />
 		</v-col>
     <v-col>

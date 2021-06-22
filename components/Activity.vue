@@ -1,7 +1,6 @@
 <template>
   <v-card
     class="mt-3 mb-3"
-    max-width="344"
   >
 		<v-list-item three-line>
 			<v-list-item-content>
@@ -24,6 +23,7 @@
       <v-btn
         text
         color="teal accent-4"
+				@click="addActivity"
       >
         Add
       </v-btn>
@@ -38,6 +38,19 @@ export default {
 				icon: String,
 				content: String,
 				color: String
+		},
+		methods: {
+        addActivity (e){
+            this.$store.commit('timeline/add',
+								{
+								    type: this.$props.type,
+										desc: this.$props.desc,
+										icon: this.$props.icon,
+										color: this.$props.color,
+										content: this.$props.content
+								}
+						);
+				}
 		}
 }
 </script>

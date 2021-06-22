@@ -44,7 +44,7 @@ export default {
           },
 					{
 					    type: 'Blood Sugar',
-							desc: 'blood sugar check',
+							desc: '',
 							icon: 'mdi-water',
 							content: 'BloodSugarActivity'
 					}

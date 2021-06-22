@@ -14,7 +14,7 @@
     export default {
         data () {
             return {
-                ex3: { label: 'Blood Sugar', val: 300, color: 'red' },
+                ex3: { label: 'Blood Sugar', val: 100, color: 'red' },
             }
         },
     }

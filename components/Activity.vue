@@ -15,7 +15,7 @@
 			<v-list-item-avatar
 				size="80"
 			>
-				<v-icon large>
+				<v-icon large :color="color">
 					{{icon}}
 				</v-icon>
 			</v-list-item-avatar>
@@ -36,7 +36,8 @@ export default {
         type: String,
 				desc: String,
 				icon: String,
-				content: String
+				content: String,
+				color: String
 		}
 }
 </script>

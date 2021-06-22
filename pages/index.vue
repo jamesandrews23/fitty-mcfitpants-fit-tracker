@@ -8,6 +8,7 @@
 				:desc="activity.desc"
 				:icon="activity.icon"
 				:content="activity.content"
+				:color="activity.color"
 			/>
 		</v-col>
     <v-col cols="6">col 2</v-col>
@@ -46,7 +47,8 @@ export default {
 					    type: 'Blood Sugar',
 							desc: '',
 							icon: 'mdi-water',
-							content: 'BloodSugarActivity'
+							content: 'BloodSugarActivity',
+							color: 'red'
 					}
       ]
     }

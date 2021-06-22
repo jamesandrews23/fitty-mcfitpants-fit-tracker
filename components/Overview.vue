@@ -10,7 +10,7 @@
 				>
 					<v-item v-slot="{ active, toggle }">
 						<v-card
-							:color="active ? 'primary' : ''"
+							:color="active ? 'yellow lighten-2' : ''"
 							class="d-flex align-center"
 							height="60"
 							@click="toggle"
@@ -20,7 +20,7 @@
 									v-if="active"
 									class="text-h2 flex-grow-1 text-center"
 								>
-									<v-icon>
+									<v-icon :color="item.color">
 										{{ item.icon }}
 									</v-icon>
 								</div>
@@ -28,7 +28,7 @@
 									v-else
 									class="text-h2 flex-grow-1 text-center"
 								>
-									<v-icon>
+									<v-icon :color="item.color">
 										{{ item.icon }}
 									</v-icon>
 								</div>

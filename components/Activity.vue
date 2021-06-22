@@ -8,7 +8,7 @@
 					{{type}}
 				</v-list-item-title>
 				<v-list-item-subtitle>{{desc}}</v-list-item-subtitle>
-				<component :is="content"></component>
+				<component :is="content" ref="dynamicComponent"></component>
 			</v-list-item-content>
 			<v-list-item-avatar
 				size="80"
@@ -46,7 +46,7 @@ export default {
 										desc: this.$props.desc,
 										icon: this.$props.icon,
 										color: this.$props.color,
-										content: this.$store.state.activityAdjustment,
+										content: this.$refs.dynamicComponent.$data.val,
 										timestamp: new Date().toLocaleString()
 								}
 						);

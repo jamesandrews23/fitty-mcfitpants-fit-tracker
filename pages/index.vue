@@ -31,6 +31,7 @@
 <script>
 import Activity from '../components/Activity';
 import BloodSugarActivity from "../components/BloodSugarActivity";
+import BikeRideActivity from "../components/BikeRideActivity";
 
 export default {
   components: {
@@ -43,7 +44,9 @@ export default {
           {
               type: 'Bike Ride',
               desc: 'A bike ride through the woods',
-							icon: 'mdi-bike'
+							icon: 'mdi-bike',
+							content: 'BikeRideActivity',
+							color: 'green'
           },
 					{
 					    type: 'Blood Sugar',

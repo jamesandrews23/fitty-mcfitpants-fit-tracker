@@ -3,6 +3,7 @@
 		<v-timeline
 			v-if="items.length > 0"
 			:dense="$vuetify.breakpoint.smAndDown"
+			reverse
 		>
 			<v-timeline-item
 				v-for="(item, i) in items"

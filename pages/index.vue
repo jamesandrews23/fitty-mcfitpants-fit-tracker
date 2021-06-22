@@ -12,7 +12,7 @@
 				:suffix="activity.suffix"
 			/>
 		</v-col>
-    <v-col cols="7">
+    <v-col cols="6">
 			<Timeline />
 		</v-col>
     <v-col>

@@ -12,11 +12,12 @@
 </template>
 <script>
     export default {
+        name: "BloodSugarActivity",
         data () {
             return {
                 val: 100,
                 slider: { label: 'Blood Sugar', color: 'red' },
             }
-        },
+        }
     }
 </script>

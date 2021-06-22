@@ -30,6 +30,8 @@
   </v-card>
 </template>
 <script>
+	import { v4 as uuidv4 } from 'uuid';
+
 export default {
     props: {
         type: String,
@@ -43,6 +45,7 @@ export default {
         addActivity (e){
             this.$store.commit('timeline/add',
 								{
+								    id: uuidv4(),
 								    type: this.$props.type,
 										desc: this.$props.desc,
 										icon: this.$props.icon,

@@ -9,6 +9,7 @@
 </template>
 <script>
 	export default {
+	  name: "BikeRideActivity",
 		data (){
 				return {
 						val: 0

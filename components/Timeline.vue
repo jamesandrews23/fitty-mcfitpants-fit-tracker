@@ -20,6 +20,15 @@
 					<v-card-text class="white text--primary">
 						<p>{{ item.content }} {{ item.suffix }}</p>
 					</v-card-text>
+					<v-card-actions>
+						<v-btn
+							text
+							color="red accent-4"
+							@click="() => remove(item.id)"
+						>
+							Remove
+						</v-btn>
+					</v-card-actions>
 				</v-card>
 			</v-timeline-item>
 		</v-timeline>
@@ -35,6 +44,11 @@
         	    let activities = this.$store.state.timeline.timeline.slice();
         	    return activities.reverse();
 					}
+				},
+				methods: {
+            remove (id){
+                this.$store.commit("timeline/remove", id);
+						}
 				}
     }
 </script>

@@ -1,8 +1,9 @@
 <template>
 	<div class="pt-8 pl-5 pr-5">
 		<v-slider
-			v-model="ex3.val"
-			:thumb-color="ex3.color"
+			v-on:end="onDragEnd"
+			v-model="slider.val"
+			:thumb-color="slider.color"
 			thumb-label="always"
 			inverse-label
 			max="300"
@@ -14,8 +15,13 @@
     export default {
         data () {
             return {
-                ex3: { label: 'Blood Sugar', val: 100, color: 'red' },
+                slider: { label: 'Blood Sugar', val: 100, color: 'red' },
             }
         },
+				methods: {
+            onDragEnd(){
+                this.$store.commit('adjustActivity', this.$data.slider.val);
+						}
+				}
     }
 </script>

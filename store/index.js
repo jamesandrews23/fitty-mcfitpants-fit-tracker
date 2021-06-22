@@ -1,9 +1,9 @@
 export const state = () => ({
-	counter: 0
-})
+	activityAdjustment: 0
+});
 
 export const mutations = {
-	increment(state) {
-		state.counter++
+	adjustActivity(state, adjustedValue) {
+		state.activityAdjustment = adjustedValue;
 	}
-}
+};

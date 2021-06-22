@@ -18,6 +18,7 @@
 					</v-card-title>
 					<v-card-text class="white text--primary">
 						<p>{{ item.desc }}</p>
+						<p>{{ item.content }}</p>
 					</v-card-text>
 				</v-card>
 			</v-timeline-item>

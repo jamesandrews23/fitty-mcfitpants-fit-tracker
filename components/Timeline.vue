@@ -2,7 +2,7 @@
 	<div>
 		<v-timeline
 			v-if="items.length > 0"
-			:dense="$vuetify.breakpoint.smAndDown"
+			dense
 			reverse
 		>
 			<v-timeline-item
@@ -12,11 +12,14 @@
 				:icon="item.icon"
 				fill-dot
 			>
-				<span slot="opposite">{{ item.timestamp }}</span>
+<!--				<span slot="opposite">{{ item.timestamp }}</span>-->
 				<v-card elevation="2">
 					<v-card-title class="text-h6">
 						{{ item.type }}
 					</v-card-title>
+					<v-card-subtitle>
+						{{ item.timestamp }}
+					</v-card-subtitle>
 					<v-card-text class="white text--primary">
 						<p>{{ item.content }} {{ item.suffix }}</p>
 					</v-card-text>

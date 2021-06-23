@@ -16,16 +16,7 @@
 			<Timeline />
 		</v-col>
     <v-col>
-      <v-row>
-        <v-col>
-          <Overview />
-        </v-col>
-      </v-row>
-      <v-row>
-        <v-col>
-          sub col 2
-        </v-col>
-      </v-row>
+			<Overview />
     </v-col>
   </v-row>
 </template>

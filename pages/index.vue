@@ -5,19 +5,6 @@
 			<v-col cols="12">
 				<Timeline/>
 			</v-col>
-			<!--			<v-fab-transition>-->
-			<!--				<v-btn-->
-			<!--					color="green lighten-1"-->
-			<!--					fab-->
-			<!--					dark-->
-			<!--					bottom-->
-			<!--					right-->
-			<!--					class="add-button"-->
-			<!--					@click.stop="dialog = true"-->
-			<!--				>-->
-			<!--					<v-icon>mdi-plus</v-icon>-->
-			<!--				</v-btn>-->
-			<!--			</v-fab-transition>-->
 		</v-row>
 		<v-row justify="center">
 			<v-dialog
@@ -41,9 +28,9 @@
 							v-for="activity in activities"
 						/>
 					</v-card-text>
-					<v-divider />
+					<v-divider/>
 					<v-card-actions>
-						<v-btn text color="blue lighten-1" @click="closeDialog">
+						<v-btn @click="closeDialog" color="blue lighten-1" text>
 							OK
 						</v-btn>
 					</v-card-actions>
@@ -64,20 +51,20 @@
                 return this.$store.state.activities.activities;
             },
             displayDialog: {
-                get(){
+                get() {
                     return this.$store.state.displayDialog;
                 },
 
-                set(value){
+                set(value) {
                     this.$store.commit('showDialog', value);
-								}
+                }
             }
         },
         methods: {
-            closeDialog(){
+            closeDialog() {
                 this.$store.commit('showDialog', false);
-						}
-				}
+            }
+        }
     }
 </script>
 <style>

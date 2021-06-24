@@ -21,7 +21,7 @@
 		</template>
 		<v-date-picker
 			v-model="date"
-			@input="dateMenu = false"
+			@input="loadDate"
 		></v-date-picker>
 	</v-menu>
 </template>
@@ -53,6 +53,12 @@
                 const [month, day, year] = date.split('/');
                 return `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`;
             },
+						loadDate (date){
+                this.$data.dateMenu = false;
+                let formattedDate = this.formatDate(date);
+                this.$store.commit('changeDate', formattedDate);
+                this.$store.commit('timeline/loadDateTimeline', formattedDate);
+						}
         },
     }
 </script>

@@ -31,6 +31,13 @@
 
 <script>
     export default {
+        created (){
+          //initialize to today's date
+        	let storedState = localStorage.getItem(new Date().toLocaleString().substr(0, 9));
+        	if(storedState){
+        	    this.$store.commit('timeline/initialize', JSON.parse(storedState));
+					}
+				},
         methods: {
         	changeDialog(show){
         	    this.$store.commit('showDialog', show);

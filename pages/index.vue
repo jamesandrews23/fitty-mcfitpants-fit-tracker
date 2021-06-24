@@ -1,14 +1,12 @@
 <template>
 	<div>
 		<v-row>
-
 			<v-col cols="12">
 				<Timeline/>
 			</v-col>
 		</v-row>
 		<v-row justify="center">
 			<v-dialog
-				max-width="290"
 				v-model="displayDialog"
 			>
 				<v-card>

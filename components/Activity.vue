@@ -51,7 +51,7 @@ export default {
 										icon: this.$props.icon,
 										color: this.$props.color,
 										content: this.$refs.dynamicComponent.$data.val,
-										timestamp: this.$store.state.date,
+										timestamp: new Date().toLocaleString(),
 										suffix: this.$props.suffix
 								}
 						);

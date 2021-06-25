@@ -33,7 +33,7 @@
     export default {
         created (){
           //initialize to today's date
-        	let storedState = localStorage.getItem(new Date().toLocaleString().substr(0, 9));
+        	let storedState = localStorage.getItem(new Date().toISOString().substr(0, 10));
         	if(storedState){
         	    this.$store.commit('timeline/initialize', JSON.parse(storedState));
 					}

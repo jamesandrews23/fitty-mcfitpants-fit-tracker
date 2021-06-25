@@ -5,12 +5,12 @@ export const state = () => ({
 export const mutations = {
 	add(state, activity){
 		state.timeline.push(activity);
-		localStorage.setItem(state.date, JSON.stringify(state.timeline));
+		localStorage.setItem(this.state.date, JSON.stringify(state.timeline));
 	},
 
 	remove(state, id){
 		state.timeline = state.timeline.filter( (activity) => { return activity.id !== id });
-		localStorage.setItem(state.date, JSON.stringify(state.timeline));
+		localStorage.setItem(this.state.date, JSON.stringify(state.timeline));
 	},
 
 	initialize(state, persistedState){

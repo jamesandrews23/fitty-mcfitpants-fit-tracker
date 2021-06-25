@@ -36,6 +36,7 @@
 				</v-card>
 			</v-dialog>
 		</v-row>
+		<Alert />
 	</div>
 </template>
 <script>

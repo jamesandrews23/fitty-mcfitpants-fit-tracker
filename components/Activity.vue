@@ -55,6 +55,9 @@ export default {
 										suffix: this.$props.suffix
 								}
 						);
+
+            this.$store.commit('showAlert', true);
+            this.$store.commit('changeAlertText', "You added " + this.$props.type + " to your timeline @ " + new Date().toLocaleString().substr(11));
 				}
 		}
 }

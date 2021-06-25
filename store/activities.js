@@ -15,6 +15,14 @@ export const state = () => ({
 				content: 'BloodSugarActivity',
 				color: 'red',
 				suffix: ' mg/dL'
+		},
+		{
+			type: 'Swimming',
+			desc: '',
+			icon: 'mdi-swim',
+			content: 'SwimmingCard',
+			color: 'blue lighten-2',
+			suffix: ''
 		}
 	]
 });

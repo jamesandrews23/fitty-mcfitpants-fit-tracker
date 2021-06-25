@@ -37,7 +37,7 @@ export default {
         type: String,
 				desc: String,
 				icon: String,
-				content: String,
+				content: String | Object,
 				color: String,
 				suffix: String
 		},
@@ -50,14 +50,15 @@ export default {
 										desc: this.$props.desc,
 										icon: this.$props.icon,
 										color: this.$props.color,
-										content: this.$refs.dynamicComponent.$data.val,
+										content: this.$refs.dynamicComponent ? this.$refs.dynamicComponent.$data.val : '',
 										timestamp: new Date().toLocaleString(),
 										suffix: this.$props.suffix
 								}
 						);
 
             this.$store.commit('showAlert', true);
-            this.$store.commit('changeAlertText', "You added " + this.$props.type + " to your timeline @ " + new Date().toLocaleString().substr(11));
+            this.$store.commit('changeAlertText', "You added " + this.$props.type + " to your timeline @ "
+								+ new Date().toLocaleString().substr(11));
 				}
 		}
 }

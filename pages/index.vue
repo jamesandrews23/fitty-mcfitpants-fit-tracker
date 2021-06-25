@@ -17,6 +17,7 @@
 					<v-divider></v-divider>
 					<v-card-text>
 						<Activity
+							v-for="activity in activities"
 							:color="activity.color"
 							:content="activity.content"
 							:desc="activity.desc"
@@ -24,7 +25,6 @@
 							:key="activity.type"
 							:suffix="activity.suffix"
 							:type="activity.type"
-							v-for="activity in activities"
 						/>
 					</v-card-text>
 					<v-divider/>

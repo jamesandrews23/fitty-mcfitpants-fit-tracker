@@ -8,6 +8,7 @@
 		<v-row justify="center">
 			<v-dialog
 				v-model="displayDialog"
+				scrollable
 			>
 				<v-card>
 					<v-card-title>

@@ -23,8 +23,6 @@ export const mutations = {
 
 	loadDateTimeline(state, date){
 		let dateForTimeline = localStorage.getItem(date);
-		if(dateForTimeline){
-			state.timeline = JSON.parse(dateForTimeline);
-		}
+		state.timeline = dateForTimeline ? JSON.parse(dateForTimeline) : [];
 	}
 };

@@ -11,6 +11,7 @@
 			<v-btn
 				@click.stop="changeDialog(true)"
 				icon
+				:disabled="date !== (new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substr(0, 10)"
 			>
 				<v-icon>mdi-plus</v-icon>
 			</v-btn>
@@ -31,6 +32,13 @@
 
 <script>
     export default {
+        computed: {
+        	date: {
+        	    get(){
+        	        return this.$store.state.date;
+							}
+					}
+				},
         created (){
           //initialize to today's date
         	let storedState = localStorage.getItem(this.$store.state.date);

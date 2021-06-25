@@ -36,7 +36,12 @@
 			</v-timeline-item>
 		</v-timeline>
 		<p v-else class="text-center">
-			Start by Adding an Activity
+			<span v-if="date < (new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substr(0, 10)">
+				No activities available for this date
+			</span>
+			<span v-else>
+				Start by adding an activity
+			</span>
 		</p>
 	</div>
 </template>
@@ -46,7 +51,12 @@
         	items (){
         	    let activities = this.$store.state.timeline.timeline.slice();
         	    return activities.reverse();
-					}
+					},
+						date: {
+        	    get(){
+        	        return this.$store.state.date;
+							}
+						}
 				},
 				methods: {
             remove (id){

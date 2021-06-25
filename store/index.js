@@ -1,6 +1,6 @@
 export const state = () => ({
 	displayDialog: false,
-	date: new Date().toISOString().substr(0, 10)
+	date: (new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substr(0, 10)
 });
 
 export const mutations = {

@@ -27,9 +27,21 @@
 </template>
 <script>
     export default {
+        computed: {
+        	date: {
+        	    get(){
+        	        return this.$store.state.date;
+							},
+
+							set(toDate){
+        	        this.$store.commit('changeDate', toDate);
+							}
+					}
+				},
+
         data: vm => ({
-            date: new Date().toISOString().substr(0, 10),
-            dateFormatted: vm.formatDate(new Date().toISOString().substr(0, 10)),
+            // date: (new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substr(0, 10),
+            dateFormatted: vm.formatDate((new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substr(0, 10)),
             dateMenu: false,
             menu2: false,
         }),
@@ -55,9 +67,7 @@
             },
 						loadDate (date){
                 this.$data.dateMenu = false;
-                let formattedDate = this.formatDate(date);
-                this.$store.commit('changeDate', formattedDate);
-                this.$store.commit('timeline/loadDateTimeline', formattedDate);
+                this.$store.commit("timeline/loadDateTimeline", date);
 						}
         },
     }

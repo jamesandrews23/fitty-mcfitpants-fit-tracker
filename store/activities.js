@@ -28,5 +28,13 @@ export const state = () => ({
 });
 
 export const mutations = {
+	updateActivitiesList(state, payload){
+		state.activities = payload;
+	}
+};
 
+export const getters = {
+	getActivityByType: (state) => (type) => {
+		return state.activities.filter(activity => activity.type === type);
+	}
 };

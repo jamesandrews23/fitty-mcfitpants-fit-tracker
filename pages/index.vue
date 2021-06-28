@@ -12,18 +12,18 @@
 			>
 				<v-card>
 					<v-card-title>
-						Actions
-					</v-card-title>
-					<v-divider></v-divider>
-					<v-card-text>
 						<v-text-field
 							label="Search Activities"
 							solo
 							dense
 							prepend-inner-icon="mdi-magnify"
-							class="mt-2"
-							@input="filterActivities"
+							@input="getActivitiesByType"
+							hide-details
 						></v-text-field>
+					</v-card-title>
+					<v-divider></v-divider>
+					<v-card-text>
+
 						<Activity
 							v-for="activity in activities"
 							:color="activity.color"
@@ -49,7 +49,7 @@
 </template>
 <script>
     import Activity from '../components/Activity';
-    import {mapState} from 'vuex';
+    import {mapState, mapGetters} from 'vuex';
 
     export default {
         components: {
@@ -59,6 +59,9 @@
 						...mapState('activities', {
 						    activities: state => state.activities
 						}),
+						...mapGetters([
+
+						]),
             displayDialog: {
                 get() {
                     return this.$store.state.displayDialog;
@@ -73,9 +76,8 @@
             closeDialog() {
                 this.$store.commit('showDialog', false);
             },
-
-						filterActivities(value){
-							console.log(value);
+						getActivitiesByType(type){
+                this.$store.getters['activities/getActivityByType'](type);
 						}
         }
     }

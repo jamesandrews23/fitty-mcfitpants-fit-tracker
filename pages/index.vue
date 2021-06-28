@@ -16,6 +16,14 @@
 					</v-card-title>
 					<v-divider></v-divider>
 					<v-card-text>
+						<v-text-field
+							label="Search Activities"
+							solo
+							dense
+							prepend-inner-icon="mdi-magnify"
+							class="mt-2"
+							@input="filterActivities"
+						></v-text-field>
 						<Activity
 							v-for="activity in activities"
 							:color="activity.color"
@@ -41,15 +49,16 @@
 </template>
 <script>
     import Activity from '../components/Activity';
+    import {mapState} from 'vuex';
 
     export default {
         components: {
             Activity
         },
         computed: {
-            activities() {
-                return this.$store.state.activities.activities;
-            },
+						...mapState('activities', {
+						    activities: state => state.activities
+						}),
             displayDialog: {
                 get() {
                     return this.$store.state.displayDialog;
@@ -63,7 +72,11 @@
         methods: {
             closeDialog() {
                 this.$store.commit('showDialog', false);
-            }
+            },
+
+						filterActivities(value){
+							console.log(value);
+						}
         }
     }
 </script>

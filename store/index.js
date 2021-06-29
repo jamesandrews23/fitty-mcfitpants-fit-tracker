@@ -64,7 +64,8 @@ export const actions = {
 
 export const getters = {
 	getActivitiesByType: (state) => (type) => {
-		let list = state.activities.filter(activity => activity.type.match(type) !== null && activity.type.match(type)[0].length > 0);
+		let typeRegExp = new RegExp(type, 'i');
+		let list = state.activities.filter(activity => activity.type.match(typeRegExp) !== null && activity.type.match(typeRegExp)[0].length > 0);
 		if(list.length === 0){
 			return state.activities;
 		}

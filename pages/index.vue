@@ -10,7 +10,7 @@
 				v-model="displayDialog"
 				scrollable
 			>
-				<v-card>
+				<v-card min-height="662">
 					<v-card-title>
 						<v-text-field
 							label="Search Activities"

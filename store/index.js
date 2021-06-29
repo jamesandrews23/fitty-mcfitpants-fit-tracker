@@ -64,7 +64,7 @@ export const actions = {
 
 export const getters = {
 	getActivitiesByType: (state) => (type) => {
-		let list = state.activities.filter(activity => activity.type === type);
+		let list = state.activities.filter(activity => activity.type.match(type) !== null && activity.type.match(type)[0].length > 0);
 		if(list.length === 0){
 			return state.activities;
 		}

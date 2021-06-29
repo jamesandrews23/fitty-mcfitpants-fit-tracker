@@ -17,15 +17,15 @@
 							solo
 							dense
 							prepend-inner-icon="mdi-magnify"
-							@input="getActivitiesByType"
+							@input="getActivities"
 							hide-details
+							ref="searchField"
 						></v-text-field>
 					</v-card-title>
 					<v-divider></v-divider>
 					<v-card-text>
-
 						<Activity
-							v-for="activity in activities"
+							v-for="activity in filteredData"
 							:color="activity.color"
 							:content="activity.content"
 							:desc="activity.desc"
@@ -56,28 +56,22 @@
             Activity
         },
         computed: {
-						...mapState('activities', {
-						    activities: state => state.activities
-						}),
-						...mapGetters([
-
-						]),
-            displayDialog: {
-                get() {
-                    return this.$store.state.displayDialog;
-                },
-
-                set(value) {
-                    this.$store.commit('showDialog', value);
-                }
-            }
+						...mapState(['displayDialog'])
         },
+				data (){
+					return {
+              filteredData: []
+					}
+				},
+				mounted(){
+        	this.$data.filteredData = this.$store.state.activities;
+				},
         methods: {
             closeDialog() {
                 this.$store.commit('showDialog', false);
             },
-						getActivitiesByType(type){
-                this.$store.getters['activities/getActivityByType'](type);
+						getActivities(value){
+                this.$data.filteredData = this.$store.getters.getActivitiesByType(value);
 						}
         }
     }

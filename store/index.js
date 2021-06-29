@@ -2,7 +2,33 @@ export const state = () => ({
 	displayDialog: false,
 	date: (new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substr(0, 10),
 	alert: false,
-	alertText: "You made a change"
+	alertText: "You made a change",
+	activities: [
+		{
+			type: 'Bike Ride',
+			desc: 'miles',
+			icon: 'mdi-bike',
+			content: 'BikeRideActivity',
+			color: 'green',
+			suffix: ' miles'
+		},
+		{
+			type: 'Blood Sugar',
+			desc: '',
+			icon: 'mdi-water',
+			content: 'BloodSugarActivity',
+			color: 'red',
+			suffix: ' mg/dL'
+		},
+		{
+			type: 'Swimming',
+			desc: '',
+			icon: 'mdi-swim',
+			content: 'SwimmingCard',
+			color: 'blue lighten-2',
+			suffix: ''
+		}
+	]
 });
 
 export const mutations = {
@@ -34,4 +60,14 @@ export const actions = {
 		// 	console.log("no stored items");
 		// }
 	// }
+};
+
+export const getters = {
+	getActivitiesByType: (state) => (type) => {
+		let list = state.activities.filter(activity => activity.type === type);
+		if(list.length === 0){
+			return state.activities;
+		}
+		return list;
+	}
 };

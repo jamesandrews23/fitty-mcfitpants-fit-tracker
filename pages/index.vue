@@ -56,7 +56,15 @@
             Activity
         },
         computed: {
-						...mapState(['displayDialog'])
+						displayDialog: {
+						    get(){
+						        return this.$store.state.displayDialog;
+								},
+
+								set(value){
+						        this.$store.commit('showDialog', value);
+								}
+						}
         },
 				data (){
 					return {

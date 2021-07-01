@@ -9,8 +9,9 @@
 			<v-dialog
 				v-model="displayDialog"
 				scrollable
+				class="card-content"
 			>
-				<v-card min-height="662">
+				<v-card>
 					<v-card-title>
 						<v-text-field
 							label="Search Activities"
@@ -85,9 +86,7 @@
     }
 </script>
 <style>
-	.add-button {
-		position: absolute;
-		bottom: 20px;
-		right: 30px;
+	.card-content {
+		min-height: 662px;
 	}
 </style>

@@ -3,7 +3,7 @@
 		<v-snackbar
 			v-model="alert"
 			color="primary"
-			top
+			centered
 		>
 			{{ alertText }}
 		</v-snackbar>

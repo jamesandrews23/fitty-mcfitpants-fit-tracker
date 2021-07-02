@@ -27,6 +27,14 @@ export const state = () => ({
 			content: 'SwimmingCard',
 			color: 'blue lighten-2',
 			suffix: ''
+		},
+		{
+			type: 'Weight',
+			desc: '',
+			icon: 'mdi-scale-bathroom',
+			content: 'WeightActivity',
+			color: 'orange lighten-2',
+			suffix: 'lbs'
 		}
 	]
 });

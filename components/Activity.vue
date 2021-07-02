@@ -2,22 +2,39 @@
   <v-card
     class="mt-3 mb-3"
   >
-		<v-list-item three-line>
-			<v-list-item-content>
-				<v-list-item-title class="text-h5 mb-1">
-					{{type}}
-				</v-list-item-title>
-				<v-list-item-subtitle>{{desc}}</v-list-item-subtitle>
-				<component :is="content" ref="dynamicComponent"></component>
-			</v-list-item-content>
-			<v-list-item-avatar
-				size="80"
-			>
-				<v-icon large :color="color">
-					{{icon}}
-				</v-icon>
-			</v-list-item-avatar>
-		</v-list-item>
+		<v-card-text>
+			<v-container>
+				<v-row>
+					<v-col>
+						{{ type }}
+					</v-col>
+					<v-col>
+						<v-icon large :color="color">
+							{{ icon }}
+						</v-icon>
+					</v-col>
+				</v-row>
+				<v-row>
+					<component :is="content" ref="dynamicComponent"></component>
+				</v-row>
+			</v-container>
+		</v-card-text>
+<!--		<v-list-item three-line>-->
+<!--			<v-list-item-content>-->
+<!--				<v-list-item-title class="text-h5 mb-1">-->
+<!--					{{type}}-->
+<!--				</v-list-item-title>-->
+<!--				<v-list-item-subtitle>{{desc}}</v-list-item-subtitle>-->
+<!--				<component :is="content" ref="dynamicComponent"></component>-->
+<!--			</v-list-item-content>-->
+<!--			<v-list-item-avatar-->
+<!--				size="80"-->
+<!--			>-->
+<!--				<v-icon large :color="color">-->
+<!--					{{icon}}-->
+<!--				</v-icon>-->
+<!--			</v-list-item-avatar>-->
+<!--		</v-list-item>-->
     <v-card-actions>
       <v-btn
         text

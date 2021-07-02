@@ -21,7 +21,6 @@
 							@input="getActivities"
 							hide-details
 							ref="searchField"
-							readonly
 						></v-text-field>
 					</v-card-title>
 					<v-divider></v-divider>

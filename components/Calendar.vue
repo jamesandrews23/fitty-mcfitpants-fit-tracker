@@ -17,6 +17,7 @@
 				v-on="on"
 				hide-details
 				single-line
+				readonly
 			></v-text-field>
 		</template>
 		<v-date-picker

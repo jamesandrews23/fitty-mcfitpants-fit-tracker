@@ -58,7 +58,7 @@ export default {
 
             this.$store.commit('showAlert', true);
             this.$store.commit('changeAlertText', "You added " + this.$props.type + " to your timeline @ "
-								+ new Date().toLocaleString().substr(11));
+								+ new Date().toLocaleString().substr(10));
 				}
 		}
 }

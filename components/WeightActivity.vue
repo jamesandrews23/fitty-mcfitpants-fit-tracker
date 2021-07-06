@@ -20,7 +20,7 @@
 			<v-col class="text-left">
 				<span
 					class="text-h2 font-weight-light"
-					v-text="bpm"
+					v-text="val"
 				></span>
 				<span class="subheading font-weight-light mr-1">LBS</span>
 <!--				<v-fade-transition>-->
@@ -56,7 +56,7 @@
 			max="218"
 			min="40"
 			track-color="grey"
-			v-model="bpm"
+			v-model="val"
 		>
 			<template v-slot:prepend>
 				<v-icon
@@ -82,30 +82,30 @@
     export default {
         name: "WeightActivity",
         data: () => ({
-            bpm: 40,
+            val: 40,
             interval: null,
             isPlaying: false,
         }),
 
         computed: {
             color() {
-                if (this.bpm < 100) return 'indigo';
-                if (this.bpm < 125) return 'teal';
-                if (this.bpm < 140) return 'green';
-                if (this.bpm < 175) return 'orange';
+                if (this.val < 100) return 'indigo';
+                if (this.val < 125) return 'teal';
+                if (this.val < 140) return 'green';
+                if (this.val < 175) return 'orange';
                 return 'red'
             },
             animationDuration() {
-                return `${60 / this.bpm}s`
+                return `${60 / this.val}s`
             },
         },
 
         methods: {
             decrement() {
-                this.bpm--
+                this.val--
             },
             increment() {
-                this.bpm++
+                this.val++
             },
             toggle() {
                 this.isPlaying = !this.isPlaying

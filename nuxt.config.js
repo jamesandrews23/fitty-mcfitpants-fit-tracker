@@ -4,7 +4,7 @@ export default {
 	mode: 'spa',
 	target: 'static',
 	router: {
-		base: '/fitty-mcfitpants-fit-tracker/'
+		base: '/'
 	},
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
